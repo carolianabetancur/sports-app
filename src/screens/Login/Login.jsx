@@ -106,6 +106,7 @@ const Login = () => {
   const Title = styled.h1`
   font-family: DM Sans;
 font-size: 42px;
+background: #181828;
 color: #FEFEFE;
 font-weight: 700;
 line-height: 51px;
@@ -130,11 +131,9 @@ align-self: center;
 width: 330px;
 height: fit-content;
 background: #2F2F43;
-background: #2F2F43;
 color: #f03d4e;
 border-radius: 18px;
 padding: 11px 13px;
-color: #f03d4e;
 margin-bottom: 0.9rem;
 outline: 0;
 font-size: 14px;
@@ -153,7 +152,6 @@ flex-direction:column;
 border-radius: 18px;
 background: #2F2F43;
 color: #FEFEFE;
-
 font-size:0.75em;
 height:16px;
 `;

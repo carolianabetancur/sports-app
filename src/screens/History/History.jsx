@@ -46,6 +46,7 @@ const History = () => {
     align-items: flex-start;
     letter-spacing: -0.055em;
     color: #FEFEFE;
+    background: #181828;
 `;
 
     const Body = styled.p`
@@ -133,7 +134,7 @@ const History = () => {
                     <SportTitle>{sport.name}</SportTitle>
                 </CardImg>
                 <CardIcon>
-                    {like?<HeartIcon/>:<CloseIcon/>}
+                    {like ? <HeartIcon /> : <CloseIcon />}
                 </CardIcon>
             </Card>
         )
@@ -147,7 +148,7 @@ const History = () => {
         try {
             const { data } = await utilityApi.getSports();
             let likes = []
-            for(let i=0;i<data.length;i++){
+            for (let i = 0; i < data.length; i++) {
                 let like = await fetchLike(data[i].id);
                 likes.push(like)
             }
@@ -158,33 +159,33 @@ const History = () => {
         }
     };
 
-  const fetchLike=async(id)=>{
-    let data = {
-      docId:"",
-      liked:true,
-      sportId:id
-    }
-    try {
-      const querySnapshot = await getDocs(collection(db, "likes"));
-      querySnapshot.forEach((doc) => {
-        if (id == doc.data().sportId) {
-          data.docId = doc.id;
-          data.liked = doc.data().liked
-          data.sportId = doc.data().sportId
-          return;
+    const fetchLike = async (id) => {
+        let data = {
+            docId: "",
+            liked: true,
+            sportId: id
         }
-      });
-      return data;
-    } catch (e) {
-      console.error("Error finding like: ", e);
-      return data;
+        try {
+            const querySnapshot = await getDocs(collection(db, "likes"));
+            querySnapshot.forEach((doc) => {
+                if (id == doc.data().sportId) {
+                    data.docId = doc.id;
+                    data.liked = doc.data().liked
+                    data.sportId = doc.data().sportId
+                    return;
+                }
+            });
+            return data;
+        } catch (e) {
+            console.error("Error finding like: ", e);
+            return data;
+        }
     }
-  }
 
-  const isLiked = (sportId) =>{
-      let like = likes.find(like=>like.sportId == sportId)
-      return like?like.liked:false;
-  }
+    const isLiked = (sportId) => {
+        let like = likes.find(like => like.sportId == sportId)
+        return like ? like.liked : false;
+    }
 
     return (
         <>
@@ -194,7 +195,7 @@ const History = () => {
                 <Title>History</Title>
                 <Body> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Body>
                 <Body> 17 December</Body>
-                { sports.map((sport)=>{
+                {sports.map((sport) => {
                     return displayList(sport)
                 })}
             </Wrapper>

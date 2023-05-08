@@ -13,7 +13,7 @@ import History from './screens/History/History';
 import Details from './screens/Details/Details';
 
 const App = () => {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('dark');
   const themeToggler = () => {
     console.log("ENTRO")
     theme === 'light' ? setTheme('dark') : setTheme('light')

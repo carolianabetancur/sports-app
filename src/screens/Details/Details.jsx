@@ -26,6 +26,7 @@ const Details = ({ themeToggler }) => {
       padding: 0;
       margin: 0;
       box-sizing: border-box;
+      background: #181828;
     }
 
     body, html, #root {
@@ -87,7 +88,7 @@ const Details = ({ themeToggler }) => {
   padding: 10px;
   height: 51px;
   width: 51px;
-  background:  ${props=>props.background}#;
+  background: #222243;
   box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.08);
   border: none;
   cursor: pointer;
@@ -96,8 +97,7 @@ const Details = ({ themeToggler }) => {
   &:hover {
     height: 81px;
     width: 81px;
-    background: linear-gradient(#236BFE, 100%, #063BA8 100%);
-
+    background: linear-gradient(125.02deg, #236BFE -17.11%, #063BA8 98.58%);
   }
   `;
 
@@ -105,7 +105,7 @@ const Details = ({ themeToggler }) => {
   width: 19.43px;
   height: 19.43px;
   color: #FFFFFF;
-  background-color: transparent;
+  background: transparent;
   &:hover {
     height: 36.45px;
     width: 34.63px;
@@ -116,7 +116,7 @@ const Details = ({ themeToggler }) => {
     width: 19.43px;
     height: 19.43px;
     color: #FFFFFF;
-    background-color: transparent;
+    background: transparent;
     &:hover {
     height: 36.45px;
     width: 34.63px;
